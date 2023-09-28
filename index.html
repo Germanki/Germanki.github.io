@@ -6,12 +6,15 @@
 -->
 <html>
 	<head>
-		<title>Paradigm Shift by HTML5 UP</title>
+		<title>Interactive Graphs for Adam Winnifrith Poster</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
+		<script src="assets/js/everpolate.browserified.min.js"></script>
+		<script src="assets/js/complex_function_SepDoE.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -22,7 +25,7 @@
 					<section class="intro">
 						<header>
 							<h1>Paradigm Shift</h1>
-							<p>A free responsive site template designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> / <a href="https://html5up.net">HTML5 UP</a></p>
+							<p>Interactive Functional DoE Graphs. Site template by: <a href="https://twitter.com/ajlkn">@ajlkn</a> / <a href="https://html5up.net">HTML5 UP</a></p>
 							<ul class="actions">
 								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
 							</ul>
@@ -38,8 +41,43 @@
 							<h2>Magna sed nullam nisl adipiscing</h2>
 						</header>
 						<div class="content">
-							<p><strong>Lorem ipsum dolor</strong> sit amet consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor amet fermentum. Nullam venenatis erat id vehicula ultrices sed ultricies condimentum. Magna sed etiam consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et dolor libero, feugiat magna tempus, sed et lorem adipiscing.</p>
-							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+							<p><strong>A 5 factor DoE</strong> Ask me any questions on how to use!</p>
+							<div id="plotlyGraph" style="width:800px;height:600px;"></div>
+							<script>
+								window.onload = function() {
+									initPlot();
+								}
+							</script>
+							  <!-- BSA Slider -->
+							<input type="range" id="BSA_slider" min="0" max="100" step="1" value="50" oninput="updateGraph()">
+							<label for="BSA_slider">BSA: </label>
+							<output id="BSA_value">50</output>
+							
+							<!-- DNA Slider -->
+							<input type="range" id="DNA_slider" min="0" max="100" step="1" value="50" oninput="updateGraph()">
+							<label for="DNA_slider">DNA: </label>
+							<output id="DNA_value">5</output>
+
+							<!-- pH Slider -->
+							<input type="range" id="pH_slider" min="6" max="8" step="2" value="8" oninput="updateGraph()">
+							<label for="pH_slider">pH: </label>
+							<output id="pH_value">8</output>
+
+							<!-- RecBCD Slider -->
+							<input type="range" id="RecBCD_slider" min="0" max="1.4" step="0.4" value="1.4" oninput="updateGraph()">
+							<label for="RecBCD_slider">RecBCD: </label>
+							<output id="RecBCD_value">1.4</output>  
+
+							<!-- DTT Slider -->
+							<input type="range" id="DTT_slider" min="0" max="1" step="0.5" value="1" oninput="updateGraph()">
+							<label for="DTT_slider">DTT: </label>
+							<output id="DTT_value">1</output>  
+
+							<!-- Sodium Chloride Slider -->
+							<input type="range" id="NaCl_slider" min="10" max="40" step="10" value="10" oninput="updateGraph()">
+							<label for="NaCl_slider">NaCl: </label>
+							<output id="NaCl_value">10</output>  
+
 						</div>
 					</section>
 
