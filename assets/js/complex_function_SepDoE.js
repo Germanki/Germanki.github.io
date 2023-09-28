@@ -95,6 +95,7 @@ function initPlot() {
   initPlot();
 
 function updateGraph() {
+    console.log("updateGraph function is triggered");  // This will print a message in the console when the function is called
     // Get the current values from the sliders
     let BSA = parseFloat(document.getElementById('BSA_slider').value);
     let DNA = parseFloat(document.getElementById('DNA_slider').value);
@@ -105,7 +106,8 @@ function updateGraph() {
   
     // Update the graph based on the new values
     let new_y_values = complexFunction(curve_time, BSA, DNA, pH, RecBCD, DTT, SodiumChloride);
-    
+    console.log("New Y Values: ", new_y_values);  // This will print the new Y values to the console
+
     // Update the Plotly graph
     Plotly.update('plotlyGraph', { y: [new_y_values] }, {});
   }
