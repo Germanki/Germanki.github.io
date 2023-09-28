@@ -64,7 +64,8 @@ function match(value, option1, result1, option2, result2) {
         match(pH, "6", RecBCD * 6797.00446978202, "8", RecBCD * 0) + 
         SodiumChloride * RecBCD * 46.0036887033848)
 
-    return mean_curve_interp(time) + shape1_interp(time) * param1 + shape2_interp(time) * param2 + shape3_interp(time) * param3 + shape4_interp(time) * param4
+    return mean_curve_interp + shape1_interp * param1 + shape2_interp * param2 + shape3_interp * param3 + shape4_interp * param4;
+
     }
 
 // Initialize Plotly graph
