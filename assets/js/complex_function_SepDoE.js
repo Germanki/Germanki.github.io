@@ -35,7 +35,7 @@ function match(value, option1, result1, option2, result2) {
           DNA * SodiumChloride * -392.663015606317 + DNA * RecBCD * 9711.3302767037 +
           match(pH, "6", SodiumChloride * -1644.97155854136, "8", SodiumChloride * 0) + 
           match(pH, "6", RecBCD * -189884.065204169, "8", RecBCD * 0) +
-          2806.62184544295 * SodiumChloride + RecBCD
+          2806.62184544295 * SodiumChloride + RecBCD)
 
     let param2 = (64451.911892955 + -11478.129987588 * BSA + BSA * BSA * 2612.68983981746 + 
         BSA * DNA * 1103.15069131127 + BSA * match(pH, "6", -8125.84329071797, "8", 0) + 
@@ -66,7 +66,7 @@ function match(value, option1, result1, option2, result2) {
 
     return mean_curve_interp(time) + shape1_interp(time) * param1 + shape2_interp(time) * param2 + shape3_interp(time) * param3 + shape4_interp(time) * param4
     }
-    
+
 // Initialize Plotly graph
 function initPlot() {
     // Test data and layout
